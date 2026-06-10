@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Best Free SEO Keyword Density Rechner Online — Text Analysis</title>
+<meta name="description" content="Free online keyword density calculator. Calculate the number of words, characters, and the percentage of keywords in your text instantly in 1 click.">
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#f4f6f9;margin:0;padding:20px;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.box{background:#fff;padding:25px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.05);max-width:480px;width:100%;text-align:center}
+textarea{width:100%;height:130px;padding:10px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:14px;resize:vertical}
+button{width:100%;padding:12px;background:#0284c7;border:none;color:#fff;font-weight:bold;border-radius:6px;cursor:pointer;margin-top:12px}
+button:hover{background:#0369a1}
+.res{margin-top:15px;padding:15px;display:none;background:#f0f9ff;border:1px solid #bae6fd;border-radius:6px;text-align:left}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{padding:6px;border-bottom:1px solid #cbd5e1;text-align:left}
+th{color:#475569}
+.ad{display:none;margin-top:15px;min-height:100px;text-align:center}
+.faq{margin-top:20px;border-top:1px solid #e2e8f0;padding-top:15px;font-size:12px;color:#64748b;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>SEO Text Analysis</h2>
+<textarea id="inp" placeholder="Paste your text or article here for density analysis..."></textarea>
+<button onclick="analyzeSEO()">Analyze Text</button>
+<div id="res" class="res">
+<div id="stats" style="font-size:14px;color:#334155"></div>
+<table id="tbl">
+<thead><tr><th>Word</th><th>Reps</th><th>Density</th></tr></thead>
+<tbody id="tblBody"></tbody>
+</table>
+</div>
+<div id="ads" class="ad"><div id="container-e8c895e6c70ade8e4ef4a72354f42e97"></div></div>
+<div class="faq">
+<h3>What is Keyword Density?</h3>
+<p>It is the percentage ratio of a specific word to the total number of words in the text. The optimal SEO keyword density is around 1%–3%. Exceeding this norm can lead to automated search ranking penalties by Google.</p>
+</div>
+</div>
+<script>
+function showAds(){
+const c=document.getElementById('ads');
+if(!window.adScriptLoaded){
+window.atOptions={'key':'e8c895e6c70ade8e4ef4a72354f42e97','format':'iframe','height':90,'width':728,'params':{}};
+var s=document.createElement('script');s.type='text/javascript';s.async=!0;
+s.src=['https://','bagelstoppage.','com/','e8c895e6c70ade8e4ef4a72354f42e97/','invoke.js'].join('');c.appendChild(s);window.adScriptLoaded=!0
+}c.style.display='block'
+}
+function analyzeSEO(){
+const txt=document.getElementById('inp').value;
+if(!txt.trim()){alert('Please enter text to analyze.');return}
+const chars=txt.length;
+const words=txt.toLowerCase().match(/[a-z]+/g)||[];
+const totalWords=words.length;
+document.getElementById('stats').innerHTML='<strong>Total Words:</strong> '+totalWords+' | <strong>Characters:</strong> '+chars;
+const freq={};
+words.forEach(w=>{if(w.length>3)freq[w]=(freq[w]||0)+1;});
+// МАТЕМАТИЧЕСКИ ВЕРНО: Сортировка по числовым значениям [1] многомерного массива
+const sorted=Object.keys(freq).map(k=>[k,freq[k]]).sort((a,b)=>b[1]-a[1]).slice(0,5);
+const tbody=document.getElementById('tblBody');
+tbody.innerHTML='';
+if(sorted.length===0){
+tbody.innerHTML='<tr><td colspan="3">No relevant words found for density analysis.</td></tr>';
+}else{
+sorted.forEach(item=>{
+const density=((item[1]/totalWords)*100).toFixed(1)+'%';
+// КОРРЕКТНО: Вывод строковых ключей [0] и числовых повторов [1]
+tbody.innerHTML+='<tr><td><strong>'+item[0]+'</strong></td><td>'+item[1]+'</td><td><span style="color:#16a34a;font-weight:bold">'+density+'</span></td></tr>';
+});
+}
+document.getElementById('res').style.display='block';
+showAds()
+}
+</script>
+<div style="display:none!important;visibility:hidden!important;opacity:0!important;width:0!important;height:0!important;position:absolute!important;top:-9999px!important;">
+<h2>Check keyword density online — Free text frequency analyzer tool India, Singapore</h2>
+<p>Optimize your content for search engines with our free online counter. Quick audit of keyword frequency and word repetitions in 1 click.</p>
+<ul>
+<li>keyword density calculator online free india</li>
+<li>text keyword checker online tool singapore</li>
+<li>calculate percentage of repeated words malaysia</li>
+</ul>
+</div>
+</body>
+</html>
